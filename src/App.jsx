@@ -1,10 +1,16 @@
 import { Hello } from "./components/Hello"
 import { Card } from "./components/Card"
 import { useState } from "react"
+import { TextField } from "./components/TextField"
+
+
+
 
 const App = () => {
 
   const [count, setCount] = useState(0)
+
+  const [name, setName] = useState("")
 
   const CARDS = [
     {
@@ -49,6 +55,17 @@ const App = () => {
       <button onClick={inc} className="bg-slate-600 animate-bounce text-neutral-50 px-4 py-2 rounded-2xl cursor-pointer">
         Count: {count}
       </button>
+
+      <form >
+        <TextField
+          id="name"
+          label="Nome completo"
+          value={name}
+          onChange={event => setName(event.target.value)}
+        />
+      </form>
+
+
 
     </main >
   )
